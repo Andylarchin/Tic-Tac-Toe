@@ -9,10 +9,9 @@ import { ScoreBoard } from './Components/ScoreBoard/ScoreBoard';
 const Counter = () => {
   useEffect(() => {
     LuigiClient.setTargetOrigin('http://localhost:3000');
-    const initListenerId = LuigiClient.addInitListener((context) => {
-      LuigiClient.sendCustomMessage({ id: 'localmessage', message: '' });
-      LuigiClient.addCustomMessageListener('aye', (data) => console.log(data));
-    });
+    console.log(window.location.host);
+     LuigiClient.sendCustomMessage({ id: 'localmessage', message: '' });
+    LuigiClient.addCustomMessageListener('aye', (data) => console.log(data));
   }, []);
 
   const WIN_CONDITIONS = [
